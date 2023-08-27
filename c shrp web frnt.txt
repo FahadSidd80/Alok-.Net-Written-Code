@@ -1,0 +1,38 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1..aspx.cs" Inherits="WebApplication1.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table border="1" style="background-color:pink">
+                <tr>
+                   <td>name:</td>
+                    <td><asp:TextBox ID="a1" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                   <td>age</td>    
+                    
+                   <td> <asp:TextBox ID="a2" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>city</td>
+
+                    <td><asp:TextBox ID="a3" runat="server"></asp:TextBox></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                <td> <asp:Button ID="Btninsrt" runat="server" Text="submit" BackColor="gray" ForeColor="WhiteSmoke" OnClick="Btninsrt_Click"></asp:Button></td>
+                </tr>
+
+            </table>
+              
+        </div>
+    </form>
+</body>
+</html>

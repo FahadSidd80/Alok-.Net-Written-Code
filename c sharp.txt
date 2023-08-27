@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
+namespace WebApplication1
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        SqlConnection con=new SqlConnection(" data source=LAPTOP-020ISGQA;initial catalog=db0012;integrated security=true");
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Btninsrt_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into student(name,age,city)values('"+a1.Text+"','"+a2.Text+"','"+a3.Text+"')",con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+    }
+}

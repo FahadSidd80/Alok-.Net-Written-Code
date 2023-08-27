@@ -1,0 +1,13 @@
+create database db2991220
+use db2991220
+
+create table employee
+(
+
+id int primary key identity,
+name varchar(50),
+city varchar(50),
+age int
+)
+
+select * from employee

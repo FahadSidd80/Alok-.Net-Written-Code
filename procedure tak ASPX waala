@@ -1,0 +1,80 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="employee.aspx.cs" Inherits="WebApplication291220.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><asp:TextBox ID="txtname" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>city</td>
+                    <td><asp:TextBox ID="txtcity" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>age</td>
+                    <td><asp:TextBox ID="txtage" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><asp:Button ID="btnsave" runat="server" Text="Submit" BackColor="Gray" ForeColor="White" OnClick="btnsave_Click"></asp:Button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><asp:GridView ID="grd" runat="server" OnRowCommand="grd_RowCommand" AutoGenerateColumns="false">
+                        <columns>
+                            <asp:TemplateField HeaderText="Employee Name">
+                                <ItemTemplate>
+                                    <%# Eval("name") %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderText="Employee City">
+                                <ItemTemplate>
+                                    <%# Eval("city") %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderText="Employee Age">
+                                <ItemTemplate>
+                                    <%# Eval("age") %>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+                            <asp:TemplateField HeaderText="Delete Record">
+                                <ItemTemplate>
+                                   <asp:linkbutton ID="btndelete" runat="server" Text="Delete" OnClientClick="return confirm('are you sure you want to delete')" CommandName="dhoom3" CommandArgument='<%# Eval("id") %>'></asp:linkbutton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+                             <asp:TemplateField HeaderText="Edit Record">
+                                <ItemTemplate>
+                                   <asp:linkbutton ID="btnedit" runat="server" Text="Edit" CommandName="krish3" CommandArgument='<%# Eval("id") %>'></asp:linkbutton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </columns>
+                           
+                        </asp:GridView></td>
+                    
+                </tr>
+
+
+
+
+
+
+
+
+
+            </table>
+        </div>
+    </form>
+</body>
+</html>

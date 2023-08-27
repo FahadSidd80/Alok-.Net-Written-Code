@@ -1,0 +1,102 @@
+use DPS123
+
+create table worker
+(
+id int primary key identity,
+name varchar(50),
+city varchar(50),
+age int,
+mobileno bigint,
+income int
+)
+
+ insert into worker(name,city,age,mobileno,income)values('fahad','sultampur','23','751800554431337','50000')
+ insert into worker(name,city,age,mobileno,income)values('hamza','sultampur','22','7515591337','50055')
+ insert into worker(name,city,age,mobileno,income)values('abdullah','kanpur','24','7533891337','50550')
+ insert into worker(name,city,age,mobileno,income)values('suraj','agra','26','7518896637','50880')
+ insert into worker(name,city,age,mobileno,income)values('abhishek','delhi','23','7558891337','58800')
+ insert into worker(name,city,age,mobileno,income)values('chandan','noida','21','7515591337','50330')
+ insert into worker(name,city,age,mobileno,income)values('almas','gurgaon','28','7518661337','500655560')
+
+ select* from worker
+
+ update worker set name='abdullah siddiqui' where id=10
+ delete from worker where id=22
+
+ ----------------------------------------------------------------------------------------------------------------------
+
+ alter table worker add salary int
+ update worker set salary='5000' where id=1
+ update worker set salary=4000 where id=2
+ alter table worker add address varchar(100), marks float(10)
+ update worker set address='sultanpur up', marks='45.55' where id=2
+ alter table worker add ages varchar(50)
+ update worker set ages='fahd' where id=1
+
+ update worker set ages=25 where id=2
+
+ alter table worker alter column age varchar(50)
+ update  worker set age='fahdd' where id=2
+ select* from worker
+
+ ------------------------------------------------------------------------------------------
+
+ sp_rename 'worker', 'studentchange'
+
+ select * from studentchange
+
+ sp_renamedb 'DPS123', 'dotnet12'
+ sp_rename 'studentchange.mobileno','contact'
+
+ alter table studentchange alter column age int
+ insert into studentchange(name)values('fahd@@')
+ sp_rename 'studentchange', 'students'
+ select*from students
+
+ alter table students drop column income
+
+ alter table students alter column age int
+ update students set ages=25
+ update students set age=23 where id=2
+ ----------------------------------------------------------------------------------------------
+
+
+ select id, name,city,contact from students
+ select * from students where id=4
+ select * from students where id>4
+ select*from students where id<4
+
+ select * from students where id=4 or id=6
+ select * from students where id=4 and id=6
+ select * from students where id=13 and name='fahad'and age=23
+
+ select * from students where id=13 or name='fahaddd' or age=23
+
+ select * from students where id in(4,6)
+ select * from students where id not in(4,6)
+ select * from students where id between 4 and 15
+ select * from students where id not between 4 and 15
+
+  select * from students where id not between 4 and 15
+
+  ---------------------------------------------------------------------------------
+  
+
+  select * from students where name='fahad'
+  select * from students where name like 'a%'
+  select * from students where name like 'h%'
+  select * from students where name like '%a'
+  select * from students where name like '%a%'
+  select * from students where name like '_a%'
+  select * from students where name like'%a_' 
+
+  select * from students where name like '%a___'
+  select * from students where name like 'a%' or name like 'f%'
+  select * from students where name like '[a,h]%'
+
+  select * from students where name like '%[h,a]__'
+  select * from students where name not like '[a-m]%'
+
+  select * from students where name like '[^a-m]%' ------ not operator
+
+  -- wild card operator-- are those operator which are used with like command
